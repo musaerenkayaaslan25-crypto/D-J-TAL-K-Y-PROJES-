@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DİJİTAL KÖY </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0f172a;
+  color:#e5e7eb;
+}
+
+header{
+  height:100vh;
+  background:
+    linear-gradient(rgba(15,23,42,.7),rgba(15,23,42,.9)),
+    url('afiş.jpeg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+
+header h1{font-size:3rem;margin-bottom:20px}
+header p{max-width:600px;margin:0 auto 30px;color:#cbd5f5}
+
+.btn{
+  display:inline-block;
+  padding:12px 30px;
+  border-radius:999px;
+  background:#38bdf8;
+  color:#020617;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{background:#0ea5e9}
+
+.btn-group{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+}
+
+section{padding:80px 10%}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#020617;
+  padding:30px;
+  border-radius:20px;
+  transition:.3s;
+}
+
+.card:hover{transform:translateY(-6px)}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  border-radius:20px;
+}
+
+/* SES BUTONLARI */
+.audio-buttons{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+  margin-bottom:50px;
+}
+
+.audio-btn{
+  background:#020617;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  cursor:pointer;
+  transition:.3s;
+  border:2px solid #38bdf8;
+}
+
+.audio-btn:hover{
+  background:#38bdf8;
+  color:#020617;
+}
+
+.cta{
+  background:linear-gradient(135deg,#0ea5e9,#38bdf8);
+  color:#020617;
+  text-align:center;
+  border-radius:30px;
+  padding:60px 20px;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+}
+
+/* VIDEO MODAL */
+.video-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.video-modal video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.close{
+  position:absolute;
+  top:25px;
+  right:35px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+  header h1{font-size:2.2rem}
+  .about{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div>
+  <h1>Dijital Köy Mirası</h1>
+  <p>GEÇMİŞ İLE GELECEK ARASINDA BİR KÖPRÜ</p>
+
+  <div class="btn-group">
+    <a href="#features" class="btn">Keşfet</a>
+    <span class="btn" onclick="openVideo()">İzle</span>
+  </div>
+</div>
+</header>
+
+<section id="features">
+<h2 style="text-align:center;margin-bottom:30px">Öne Çıkan Sesler</h2>
+
+<div class="audio-buttons">
+  <div class="audio-btn" onclick="playSound('ses1.mp3')">🎧 Ses 1</div>
+  <div class="audio-btn" onclick="playSound('ses2.mp3')">🎧 Ses 2</div>
+  <div class="audio-btn" onclick="playSound('ses3.mp3')">🎧 Ses 3</div>
+  <div class="audio-btn" onclick="playSound('ses4.mp3')">🎧 Ses 4</div>
+  <div class="audio-btn" onclick="playSound('ses5.mp3')">🎧 Ses 5</div>
+  <div class="audio-btn" onclick="playSound('ses6.mp3')">🎧 Ses 6</div>
+  <div class="audio-btn" onclick="playSound('ses7.mp3')">🎧 Ses 7</div>
+  <div class="audio-btn" onclick="playSound('ses8.mp3')">🎧 Ses 8</div>
+  <div class="audio-btn" onclick="playSound('ses9.mp3')">🎧 Ses 9</div>
+  <div class="audio-btn" onclick="playSound('ses')">🎧 Ses 10</div>
+</div>
+
+<div class="features">
+  <div class="card">
+    <h3>TOPLUMUN UNUTTUĞU DEĞERLER</h3>
+  </div>
+  <div class="card">
+    <h3>YÖRESEL YEMEKLER</h3>
+  </div>
+  <div class="card">
+    <h3>DOĞAYLA ÖZLEŞMİŞ SİMGELER</h3>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="about">
+  <div>
+    <h2>Biz Kimiz?</h2>
+    <p>GEÇMİŞTEN GELEN DEĞERLERİ YAŞATMAYA ÇALIŞAN BİR TOPLULUK</p>
+  </div>
+  <img src="AFİŞ 2.png">
+</div>
+</section>
+
+<section>
+<div class="cta">
+  <h2>Hazır mısın?</h2>
+  <p>GEÇMİŞİN SESİNİ DUYMAK İÇİN İZLE</p>
+  <span class="btn">İletişime Geç</span>
+</div>
+</section>
+
+<footer>
+© 2025 DİJİTAL KÖY
+</footer>
+
+<!-- VIDEO -->
+<div class="video-modal" id="videoModal">
+<span class="close" onclick="closeVideo()">×</span>
+<video controls autoplay>
+  <source src="intro2.mp4" type="video/mp4">
+</video>
+</div>
+
+<audio id="audioPlayer"></audio>
+
+<script>
+const audioPlayer=document.getElementById("audioPlayer");
+
+function playSound(src){
+  audioPlayer.pause();
+  audioPlayer.src=src;
+  audioPlayer.play();
+}
+
+function openVideo(){
+  document.getElementById("videoModal").style.display="flex";
+}
+
+function closeVideo(){
+  const modal=document.getElementById("videoModal");
+  const video=modal.querySelector("video");
+  video.pause();
+  video.currentTime=0;
+  modal.style.display="none";
+}
+</script>
+
+</body>
+</html>
